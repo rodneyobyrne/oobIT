@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const js = fs.readFileSync(new URL('../assets/app.js', import.meta.url), 'utf8');
+const css = fs.readFileSync(new URL('../assets/styles.css', import.meta.url), 'utf8');
+assert.match(html, /What are you trying to make easier\?/);
+assert.match(html, /go\.oobcreative\.com/);
+assert.match(html, /id="interview-form"/);
+assert.match(html, /id="result"/);
+assert.match(js, /KEEP \/ START SMALL/);
+assert.match(js, /SIMPLIFY \/ CONNECT/);
+assert.match(js, /ADD — BOUNDED/);
+assert.match(js, /REVIEW \/ POSSIBLE REPLACE/);
+assert.match(html, /No vendor compensation influences this version/);
+assert.match(css, /@media \(max-width: 820px\)/);
+console.log('Smoke checks passed.');

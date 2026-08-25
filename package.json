@@ -1,0 +1,12 @@
+{
+  "name": "oobit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "oobIT interview-driven decision front end for practical small-business technology.",
+  "scripts": {
+    "serve": "python3 -m http.server 4173",
+    "test": "node tests/smoke.mjs",
+    "check:secrets": "node tests/secrets.mjs",
+    "validate": "npm run test && npm run check:secrets"
+  }
+}
