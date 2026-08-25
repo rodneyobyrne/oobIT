@@ -1,0 +1,45 @@
+name: Verify live oobIT
+
+on:
+  workflow_run:
+    workflows: ["Deploy oobIT to GitHub Pages"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  verify-live:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for DNS and HTTPS, then verify production
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="https://go.oobcreative.com"
+
+          echo "Checking $BASE"
+          for attempt in {1..12}; do
+            if curl -fsS --connect-timeout 10 --max-time 20 "$BASE/" -o /tmp/oobit.html; then
+              break
+            fi
+            if [ "$attempt" -eq 12 ]; then
+              echo "Production hostname did not become reachable over HTTPS."
+              exit 1
+            fi
+            echo "Attempt $attempt failed; retrying in 15 seconds..."
+            sleep 15
+          done
+
+          grep -qi "oobIT" /tmp/oobit.html
+          grep -qi "What are you trying to make easier" /tmp/oobit.html
+          curl -fsS "$BASE/assets/app.js" -o /tmp/app.js
+          curl -fsS "$BASE/assets/styles.css" -o /tmp/styles.css
+          curl -fsS "$BASE/robots.txt" -o /tmp/robots.txt
+          curl -fsS "$BASE/sitemap.xml" -o /tmp/sitemap.xml
+          grep -q "go.oobcreative.com" /tmp/sitemap.xml
+          test -s /tmp/app.js
+          test -s /tmp/styles.css
+
+          echo "Live production verification passed: $BASE"
