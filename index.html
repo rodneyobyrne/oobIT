@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tell oobIT what is getting harder in your business. Get a practical next step without starting with another software sales pitch.">
+  <link rel="canonical" href="https://go.oobcreative.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="oobIT | Practical technology decisions for small business">
+  <meta property="og:description" content="Start with the business problem. oobIT helps you decide whether to keep, improve, connect, add or replace technology—and when not to buy anything.">
+  <meta property="og:url" content="https://go.oobcreative.com/">
+  <meta name="theme-color" content="#f7f4ee">
+  <title>oobIT | Practical technology decisions for small business</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"oobIT","url":"https://go.oobcreative.com/","applicationCategory":"BusinessApplication","description":"A conversational decision tool that helps small businesses understand practical technology options before choosing software or services.","provider":{"@type":"Organization","name":"oobCREATIVE","url":"https://oobcreative.com/"}}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the conversation</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="oobIT home">
+      <span class="brand-oob">oob</span><span class="brand-it">IT</span>
+      <span class="brand-by">by oobCREATIVE</span>
+    </a>
+    <a class="quiet-link" href="https://oobcreative.com/">oobcreative.com</a>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Start with the problem, not the product.</p>
+        <h1 id="page-title">What are you trying to make easier?</h1>
+        <p class="lede">Tell us what is happening in your business. oobIT helps you work out whether you should keep what you have, improve it, connect it, add something, replace something—or not buy anything at all.</p>
+      </div>
+      <div class="robot-hero" aria-hidden="true">
+        <img src="https://raw.githubusercontent.com/rodneyobyrne/oobSKILLS/main/images/ai-character/section-lockups/problem-question.webp" alt="" width="330" height="520">
+      </div>
+    </section>
+
+    <div class="rough-rule" aria-hidden="true"></div>
+
+    <section class="conversation-shell" aria-labelledby="conversation-title">
+      <div class="heading-lockup conversation-heading">
+        <img class="heading-robot" src="https://raw.githubusercontent.com/rodneyobyrne/oobSKILLS/main/images/ai-character/section-lockups/plain-answers.webp" alt="" width="112" height="176" aria-hidden="true">
+        <div>
+          <p class="eyebrow">oobIT front desk</p>
+          <h2 id="conversation-title">Tell me what’s going on.</h2>
+          <p>I’ll ask only for information that can change the next step. This first version works in your browser and does not save or send your answers.</p>
+        </div>
+      </div>
+
+      <div class="app-card" id="app" data-state="start">
+        <div id="conversation-log" class="conversation-log" aria-live="polite"></div>
+        <form id="interview-form" class="interview-form" novalidate>
+          <fieldset id="choice-fieldset">
+            <legend id="question-label">Which situation feels closest?</legend>
+            <div id="choice-list" class="choice-list"></div>
+          </fieldset>
+          <div id="text-wrap" class="text-wrap" hidden>
+            <label id="text-label" for="text-answer">Your answer</label>
+            <textarea id="text-answer" rows="4"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="button button-primary" id="continue-button" type="submit">Continue</button>
+            <button class="button button-quiet" id="back-button" type="button" hidden>Back</button>
+          </div>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <section id="result" class="result-card" tabindex="-1" hidden aria-labelledby="result-title">
+        <p class="result-label" id="result-class">NEXT STEP</p>
+        <h2 id="result-title"></h2>
+        <p id="result-summary" class="result-summary"></p>
+        <div class="result-grid">
+          <div>
+            <h3>Why this direction</h3>
+            <p id="result-why"></p>
+          </div>
+          <div>
+            <h3>What I would do first</h3>
+            <p id="result-first"></p>
+          </div>
+          <div>
+            <h3>What not to add yet</h3>
+            <p id="result-avoid"></p>
+          </div>
+        </div>
+        <div class="result-actions">
+          <button class="button button-primary" id="copy-button" type="button">Copy my summary</button>
+          <button class="button button-quiet" id="restart-button" type="button">Start over</button>
+        </div>
+        <p class="disclosure">This is an early decision aid, not a guarantee or professional/legal/financial recommendation. No vendor compensation influences this version’s result.</p>
+      </section>
+    </section>
+
+    <section class="principles" aria-labelledby="principles-title">
+      <div class="heading-lockup">
+        <img class="heading-robot" src="https://raw.githubusercontent.com/rodneyobyrne/oobSKILLS/main/images/ai-character/section-lockups/plain-answers.webp" alt="" width="112" height="176" aria-hidden="true">
+        <div>
+          <p class="eyebrow">How oobIT thinks</p>
+          <h2 id="principles-title">Buying something is only one possible answer.</h2>
+        </div>
+      </div>
+      <div class="principle-grid">
+        <article><strong>KEEP</strong><p>What you already have may be enough.</p></article>
+        <article><strong>OPTIMIZE</strong><p>The tool may be fine; the setup or workflow may not be.</p></article>
+        <article><strong>CONNECT</strong><p>Your systems may simply need a better handoff.</p></article>
+        <article><strong>ADD</strong><p>Add one missing capability when it solves a real gap.</p></article>
+        <article><strong>REPLACE</strong><p>Change platforms when the mismatch is structural.</p></article>
+        <article><strong>DO NOTHING</strong><p>Not every problem deserves another subscription.</p></article>
+      </div>
+    </section>
+
+    <section class="future-note">
+      <div class="heading-lockup">
+        <img class="heading-robot" src="https://raw.githubusercontent.com/rodneyobyrne/oobSKILLS/main/images/ai-character/section-lockups/plain-answers.webp" alt="" width="112" height="176" aria-hidden="true">
+        <div>
+          <p class="eyebrow">The bigger idea</p>
+          <h2>oobIT is being built as a trusted front door for practical AI and business technology.</h2>
+        </div>
+      </div>
+      <p>As the system develops, verified product information, voice conversations, industry-specific knowledge and transparent referrals can sit behind the same simple experience: explain what you are trying to accomplish and get routed toward a sensible next step.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>oobIT</strong> by <a href="https://oobcreative.com/">oobCREATIVE</a></p>
+    <p>Go deeper, not louder.</p>
+  </footer>
+
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>
